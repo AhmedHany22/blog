@@ -1,10 +1,10 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { fetchUsers } from "../actions";
+import { fetchPostsAndUsers } from "../actions";
 
 class UserHeader extends Component {
   componentDidMount() {
-    this.props.fetchUsers(this.props.userId);
+    this.props.fetchPostsAndUsers();
   }
   render() {
     const { user } = this.props;
@@ -20,4 +20,4 @@ const mapStateToProps = (state, compProps) => {
 };
 
 // Connect : First brackets - links the {mapStateToProps} function & the 2nd arg link the actions to the props of the state
-export default connect(mapStateToProps, { fetchUsers })(UserHeader);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(UserHeader);
